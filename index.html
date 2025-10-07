@@ -24,34 +24,50 @@
     <style>
         body { font-family: 'Inter', sans-serif; }
         ::-webkit-scrollbar { display: none;}
+        html {
+            scroll-behavior: smooth;
+        }
+        #mobile-menu-container { transition: opacity 0.25s ease; }
+        #mobile-menu-container.hidden { opacity: 0; pointer-events: none; }
+</style>
+
     </style>
 </head><body class="bg-primary-white">
 
 <header id="header" class="bg-primary-white shadow-sm sticky top-0 z-50">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3 sm:py-4">
         <div class="flex justify-between items-center">
-            <div class="flex items-center space-x-3">
-                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-accent-purple rounded-lg flex items-center justify-center">
-                    <i class="text-primary-white text-sm sm:text-lg" data-fa-i2svg=""><svg class="svg-inline--fa fa-language" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="language" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" data-fa-i2svg=""><path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"></path></svg></i>
+            <a href="#hero" class="flex items-center space-x-3 group">
+                <div class="w-8 h-8 sm:w-10 sm:h-10 bg-accent-purple rounded-lg flex items-center justify-center transition-transform group-hover:scale-105">
+                    <i class="text-primary-white text-sm sm:text-lg">
+                        <svg class="svg-inline--fa fa-language" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="language" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><path fill="currentColor" d="M0 128C0 92.7 28.7 64 64 64H256h48 16H576c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H320 304 256 64c-35.3 0-64-28.7-64-64V128zm320 0V384H576V128H320zM178.3 175.9c-3.2-7.2-10.4-11.9-18.3-11.9s-15.1 4.7-18.3 11.9l-64 144c-4.5 10.1 .1 21.9 10.2 26.4s21.9-.1 26.4-10.2l8.9-20.1h73.6l8.9 20.1c4.5 10.1 16.3 14.6 26.4 10.2s14.6-16.3 10.2-26.4l-64-144zM160 233.2L179 276H141l19-42.8zM448 164c11 0 20 9 20 20v4h44 16c11 0 20 9 20 20s-9 20-20 20h-2l-1.6 4.5c-8.9 24.4-22.4 46.6-39.6 65.4c.9 .6 1.8 1.1 2.7 1.6l18.9 11.3c9.5 5.7 12.5 18 6.9 27.4s-18 12.5-27.4 6.9l-18.9-11.3c-4.5-2.7-8.8-5.5-13.1-8.5c-10.6 7.5-21.9 14-34 19.4l-3.6 1.6c-10.1 4.5-21.9-.1-26.4-10.2s.1-21.9 10.2-26.4l3.6-1.6c6.4-2.9 12.6-6.1 18.5-9.8l-12.2-12.2c-7.8-7.8-7.8-20.5 0-28.3s20.5-7.8 28.3 0l14.6 14.6 .5 .5c12.4-13.1 22.5-28.3 29.8-45H448 376c-11 0-20-9-20-20s9-20 20-20h52v-4c0-11 9-20 20-20z"></path></svg>
+                    </i>
                 </div>
                 <div>
-                    <h1 class="text-lg sm:text-xl font-bold text-title-navy">TraduHub</h1>
+                    <h1 class="text-lg sm:text-xl font-bold text-title-navy group-hover:text-accent-purple transition-colors">TraduHub</h1>
                     <p class="text-xs text-text-charcoal hidden sm:block">Traduceri Autorizate</p>
                 </div>
-            </div>
+            </a>            
             <nav class="hidden lg:flex items-center space-x-8">
-                <span class="text-text-charcoal hover:text-accent-purple transition-colors cursor-pointer">Servicii</span>
-                <span class="text-text-charcoal hover:text-accent-purple transition-colors cursor-pointer">Cum funcționează</span>
-                <span class="text-text-charcoal hover:text-accent-purple transition-colors cursor-pointer">Despre</span>
-                <span class="text-text-charcoal hover:text-accent-purple transition-colors cursor-pointer">Contact</span>
+                <a href="#servicii" class="text-text-charcoal hover:text-accent-purple transition-colors">Servicii</a>
+                <a href="#cum-functioneaza" class="text-text-charcoal hover:text-accent-purple transition-colors">Cum funcționează</a>
+                <a href="#despre" class="text-text-charcoal hover:text-accent-purple transition-colors">Despre</a>
+                <a href="#footer" class="text-text-charcoal hover:text-accent-purple transition-colors">Contact</a>
             </nav>
+            <div class="flex items-center space-x-3">
+                <a href="fr.html" class="flex items-center space-x-1 hover:text-accent-purple transition">
+                  <span>🇫🇷</span><span class="text-sm font-medium">FR</span>
+                </a>
+              </div>
+              
             <div class="flex items-center space-x-2 sm:space-x-4">
                 <span class="text-accent-purple font-medium cursor-pointer hidden sm:flex items-center" data-lt-tmp-id="lt-620279" spellcheck="false" data-gramm="false">
                     <i class="mr-2" data-fa-i2svg=""><svg class="svg-inline--fa fa-phone" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="phone" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M164.9 24.6c-7.7-18.6-28-28.5-47.4-23.2l-88 24C12.1 30.2 0 46 0 64C0 311.4 200.6 512 448 512c18 0 33.8-12.1 38.6-29.5l24-88c5.3-19.4-4.6-39.7-23.2-47.4l-96-40c-16.3-6.8-35.2-2.1-46.3 11.6L304.7 368C234.3 334.7 177.3 277.7 144 207.3L193.3 167c13.7-11.2 18.4-30 11.6-46.3l-40-96z"></path></svg></i>+40 732 415 794</span>
-                <button class="bg-accent-purple text-primary-white px-3 sm:px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-sm sm:text-base">
-                    <span class="hidden sm:inline">Solicită ofertă</span>
-                    <span class="sm:hidden">Ofertă</span>
-                </button>
+                    <a href="mailto:traduhub@gmail.com?subject=Solicitare%20Ofert%C4%83%20Traducere&body=Bună%20ziua,%0A%0AAș%20dori%20o%20ofertă%20pentru%20traducerea%20următoarelor%20documente:%0A-%20%0A-%20%0A%0AMulțumesc!"
+                    class="bg-accent-purple text-primary-white px-3 sm:px-6 py-2 rounded-lg hover:bg-opacity-90 transition-all text-sm sm:text-base">
+                     <span class="hidden sm:inline">Solicită ofertă</span>
+                     <span class="sm:hidden">Ofertă</span>
+                    </a>
                 <button class="lg:hidden text-accent-purple">
                     <i class="text-xl" data-fa-i2svg=""><svg class="svg-inline--fa fa-bars" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="bars" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"></path></svg></i>
                 </button>
@@ -59,7 +75,52 @@
         </div>
     </div>
 </header>
+<!-- Meniu mobil -->
+<div id="mobile-menu-container" class="hidden fixed inset-0 z-40 lg:hidden">
+  <!-- Overlay semitransparent (click în afara meniului) -->
+  <div id="mobile-overlay" class="absolute inset-0 bg-black bg-opacity-30"></div>
 
+  <!-- Meniul propriu-zis -->
+  <nav id="mobile-menu" class="absolute top-[64px] left-0 w-full bg-primary-white shadow-md">
+    <div class="flex flex-col space-y-3 px-6 py-4 border-t border-gray-200">
+      <a href="#servicii" class="text-text-charcoal hover:text-accent-purple transition-colors">Servicii</a>
+      <a href="#cum-functioneaza" class="text-text-charcoal hover:text-accent-purple transition-colors">Cum funcționează</a>
+      <a href="#despre" class="text-text-charcoal hover:text-accent-purple transition-colors">Despre</a>
+      <a href="#footer" class="text-text-charcoal hover:text-accent-purple transition-colors">Contact</a>
+    </div>
+  </nav>
+</div>
+    
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const burgerBtn = document.querySelector('header button.lg\\:hidden');
+      const menuContainer = document.getElementById('mobile-menu-container');
+      const overlay = document.getElementById('mobile-overlay');
+      const mobileLinks = menuContainer.querySelectorAll('a');
+  
+      if (burgerBtn && menuContainer && overlay) {
+        // Deschide/închide meniul când se apasă pe burger
+        burgerBtn.addEventListener('click', () => {
+          menuContainer.classList.toggle('hidden');
+        });
+  
+        // Închide când se apasă pe overlay (zona din afara meniului)
+        overlay.addEventListener('click', () => {
+          menuContainer.classList.add('hidden');
+        });
+  
+        // Închide meniul și când se apasă pe un link
+        mobileLinks.forEach(link => {
+          link.addEventListener('click', () => {
+            menuContainer.classList.add('hidden');
+          });
+        });
+      }
+    });
+  </script>
+  
+  
+  
 <section id="hero" class="bg-gradient-to-br from-secondary-purple to-primary-white min-h-[600px] sm:h-[700px] flex items-center">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center py-8">
         <div class="order-2 lg:order-1">
@@ -69,16 +130,16 @@
             </div>
             <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-title-navy mb-4 sm:mb-6 leading-tight" data-lt-tmp-id="lt-4181" spellcheck="false" data-gramm="false">
                 Traduceri Autorizate<br>
-                <span class="text-accent-purple">Limba Franceză</span>
+                <span class="text-accent-purple">Română ⇆ Franceză</span>
             </h1>
             <p class="text-lg sm:text-xl text-text-charcoal mb-6 sm:mb-8 leading-relaxed">
-                Transformăm documentele tale în punți către oportunitățile din lumea francofonă. 
-                Servicii complete de traduceri autorizate și interpretariat pentru România și Europa.
+                Conectăm limba română și limba franceză prin traduceri autorizate și servicii de interpretariat, oferind punți de comunicare pentru persoane și companii din România și Europa.
             </p>
             <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-6 sm:mb-8">
-                <button class="bg-accent-purple text-primary-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center">
-                    Solicită ofertă gratuită
-                </button>
+                <a href="mailto:traduhub@gmail.com?subject=Solicitare%20Ofert%C4%83%20Gratuit%C4%83&body=Bună%20ziua,%0A%0AAș%20dori%20o%20ofertă%20gratuită%20pentru%20traducerea%20următoarelor%20documente:%0A-%20%0A-%20%0A%0AMulțumesc!"
+                class="bg-accent-purple text-primary-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-semibold hover:bg-opacity-90 transition-all flex items-center justify-center">
+                Solicită ofertă gratuită
+                </a>
             </div>
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-6">
                 <div class="flex items-center">
@@ -96,7 +157,7 @@
             </div>
         </div>
         <div class="relative order-1 lg:order-2">
-            <img class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-2xl" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/0fe4dd28ab-23cde90e9522d9da90a8.png" alt="professional woman translator working with French documents, modern office, feminine and elegant style">
+            <img class="w-full h-[300px] sm:h-[400px] lg:h-[500px] object-cover rounded-2xl shadow-2xl" src="https://raw.githubusercontent.com/NicolleXS/tradu-hub/main/images/translate-img.png" alt="professional woman translator working with French documents, modern office, feminine and elegant style">
             <div class="absolute -bottom-4 -left-4 bg-primary-white p-4 sm:p-6 rounded-xl shadow-lg">
                 <div class="flex items-center space-x-3">
                     <div class="w-10 h-10 sm:w-12 sm:h-12 bg-accent-purple rounded-full flex items-center justify-center">
@@ -117,7 +178,7 @@
         <div class="text-center mb-12 sm:mb-16">
             <h2 class="text-3xl sm:text-4xl font-bold text-title-navy mb-4">Servicii și Prețuri</h2>
             <p class="text-lg sm:text-xl text-text-charcoal max-w-3xl mx-auto">
-                Oferim soluții complete pentru toate nevoile tale de traducere și interpretariat în limba franceză
+                Oferim servicii complete de traducere și interpretariat autorizat, din română în franceză și din franceză în română, adaptate atât nevoilor personale, cât și celor profesionale.
             </p>
         </div>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
@@ -180,7 +241,7 @@
                     <span class="text-xl sm:text-2xl font-bold text-primary-white">2</span>
                 </div>
                 <h3 class="text-xl sm:text-2xl font-bold text-title-navy mb-3 sm:mb-4">Confirmare</h3>
-                <p class="text-text-charcoal text-sm sm:text-base">Îți confirmăm prețul, termenul de livrare și detaliile proiectului. Plata se face după finalizare.</p>
+                <p class="text-text-charcoal text-sm sm:text-base">Îți confirmăm prețul, termenul de livrare și detaliile proiectului. Plata se face inainte de livrare.</p>
             </div>
             <div class="text-center">
                 <div class="w-16 h-16 sm:w-20 sm:h-20 bg-accent-purple rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
@@ -288,7 +349,7 @@
                 </div>
             </div>
             <div class="relative">
-                <img class="w-full h-[300px] sm:h-[400px] object-cover rounded-2xl shadow-lg" src="https://storage.googleapis.com/uxpilot-auth.appspot.com/02605c0511-e4f12e3c210c8f70a829.png" alt="professional female translator Nicoleta Dudau working in modern office, French documents, elegant and professional atmosphere">
+                <img class="w-full h-[300px] sm:h-[400px] object-cover rounded-2xl shadow-lg" src="https://raw.githubusercontent.com/NicolleXS/tradu-hub/main/images/ND3.jpeg" alt="professional female translator Nicoleta Dudau working in modern office, French documents, elegant and professional atmosphere">
                 <div class="absolute -bottom-4 -right-4 bg-primary-white p-4 rounded-xl shadow-lg">
                     <div class="text-center">
                         <div class="text-2xl font-bold text-accent-purple">10+</div>
@@ -302,34 +363,102 @@
 
 <section id="faq" class="py-20 bg-primary-white">
     <div class="max-w-4xl mx-auto px-6">
-        <div class="text-center mb-16">
-            <h2 class="text-4xl font-bold text-title-navy mb-4">Întrebări Frecvente</h2>
-            <p class="text-xl text-text-charcoal">Răspunsuri la cele mai comune întrebări</p>
+      <div class="text-center mb-16">
+        <h2 class="text-4xl font-bold text-title-navy mb-4">Întrebări Frecvente</h2>
+        <p class="text-xl text-text-charcoal">Răspunsuri la cele mai comune întrebări</p>
+      </div>
+  
+      <div class="space-y-4">
+        <!-- FAQ 1 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="w-full flex justify-between items-center px-5 py-4 text-left text-title-navy font-medium hover:bg-gray-50 faq-toggle">
+            <span>Ce documente pot fi traduse autorizat?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-5 pb-4 text-text-charcoal hidden">
+            Toate documentele oficiale: acte de naștere, căsătorie, divorț, diplome, certificate, contracte, sentințe judecătorești, documente medicale și multe altele.
+          </div>
         </div>
-        <div class="space-y-6">
-            <div class="bg-secondary-purple rounded-xl p-6">
-                <h3 class="text-lg font-bold text-title-navy mb-3">Ce documente pot fi traduse autorizat?</h3>
-                <p class="text-text-charcoal" data-lt-tmp-id="lt-789480" spellcheck="false" data-gramm="false">Toate documentele oficiale: acte de naștere, căsătorie, divor<span style="font-size: 16px;" class="">ț</span>, diplome, certificate, contracte, sentințe judecătorești, documente medicale și multe altele.</p>
-            </div>
-            <div class="bg-secondary-purple rounded-xl p-6">
-                <h3 class="text-lg font-bold text-title-navy mb-3">Este necesară legalizarea traducerii?</h3>
-                <p class="text-text-charcoal">Depinde de destinația documentului. Pentru România, traducerea autorizată este suficientă. Pentru folosire în străinătate, poate fi necesară apostila sau legalizarea.</p>
-            </div>
-            <div class="bg-secondary-purple rounded-xl p-6">
-                <h3 class="text-lg font-bold text-title-navy mb-3">Care sunt termenele de livrare?</h3>
-                <p class="text-text-charcoal" data-lt-tmp-id="lt-141823" spellcheck="false" data-gramm="false">Standard: 3-4 zile lucrătoare. Urgențe: 24-48 ore (cu supliment de 50%). Proiecte mari: negociabil în funcție de complexitate.</p>
-            </div>
-            <div class="bg-secondary-purple rounded-xl p-6">
-                <h3 class="text-lg font-bold text-title-navy mb-3">Cum se face facturarea?</h3>
-                <p class="text-text-charcoal" data-lt-tmp-id="lt-482005" spellcheck="false" data-gramm="false">Emitem factură fiscală pentru toate serviciile. Plata se face prin transfer bancar.</p>
-            </div>
-            <div class="bg-secondary-purple rounded-xl p-6">
-                <h3 class="text-lg font-bold text-title-navy mb-3">Oferți garanție pentru traduceri?</h3>
-                <p class="text-text-charcoal">Da, oferim garanție completă. Dacă traducerea nu este acceptată de instituțiile oficiale din motive ce ne sunt imputabile, o refacem gratuit.</p>
-            </div>
+  
+        <!-- FAQ 2 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="w-full flex justify-between items-center px-5 py-4 text-left text-title-navy font-medium hover:bg-gray-50 faq-toggle">
+            <span>Este necesară legalizarea traducerii?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-5 pb-4 text-text-charcoal hidden">
+            Depinde de destinația documentului. Pentru România, traducerea autorizată este suficientă. Pentru folosire în străinătate, poate fi necesară apostila sau legalizarea.
+          </div>
         </div>
+  
+        <!-- FAQ 3 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="w-full flex justify-between items-center px-5 py-4 text-left text-title-navy font-medium hover:bg-gray-50 faq-toggle">
+            <span>Care sunt termenele de livrare?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-5 pb-4 text-text-charcoal hidden">
+            Standard: 3-4 zile lucrătoare. Urgențe: 24-48 ore (cu supliment de 50%). Proiecte mari: negociabil în funcție de complexitate.
+          </div>
+        </div>
+  
+        <!-- FAQ 4 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="w-full flex justify-between items-center px-5 py-4 text-left text-title-navy font-medium hover:bg-gray-50 faq-toggle">
+            <span>Cum se face facturarea?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-5 pb-4 text-text-charcoal hidden">
+            Emitem factură fiscală pentru toate serviciile. Plata se face prin transfer bancar.
+          </div>
+        </div>
+  
+        <!-- FAQ 5 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="w-full flex justify-between items-center px-5 py-4 text-left text-title-navy font-medium hover:bg-gray-50 faq-toggle">
+            <span>Oferiți garanție pentru traduceri?</span>
+            <svg class="w-5 h-5 transform transition-transform duration-300" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/>
+            </svg>
+          </button>
+          <div class="px-5 pb-4 text-text-charcoal hidden">
+            Da, oferim garanție completă. Dacă traducerea nu este acceptată de instituțiile oficiale din motive ce ne sunt imputabile, o refacem gratuit.
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
+  
+  <script>
+    document.querySelectorAll(".faq-toggle").forEach(button => {
+      button.addEventListener("click", () => {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector("svg");
+  
+        content.classList.toggle("hidden");
+        icon.classList.toggle("rotate-180");
+  
+        // Închide celelalte răspunsuri
+        document.querySelectorAll(".faq-toggle").forEach(otherButton => {
+          if (otherButton !== button) {
+            const otherContent = otherButton.nextElementSibling;
+            const otherIcon = otherButton.querySelector("svg");
+            otherContent.classList.add("hidden");
+            otherIcon.classList.remove("rotate-180");
+          }
+        });
+      });
+    });
+  </script>
+  
 
 <footer id="footer" class="bg-title-navy text-primary-white py-16">
     <div class="max-w-7xl mx-auto px-6">
@@ -345,7 +474,7 @@
                     </div>
                 </div>
                 <p class="text-gray-300 mb-6 leading-relaxed">
-                    Servicii profesionale de traduceri autorizate și interpretariat în limba franceză. 
+                    Servicii profesionale de traduceri autorizate și interpretariat română ⇆ franceză. 
                     Autorizat Ministerul Justiției României.
                 </p>
                 <div class="space-y-3">
@@ -365,18 +494,62 @@
             </div>
             <div>
                 <h4 class="text-lg font-bold mb-6">Contact Rapid</h4>
-                <form class="space-y-4">
-                    <input type="text" placeholder="Numele tău" class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple">
-                    <input type="email" placeholder="Email" class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple">
-                    <textarea placeholder="Mesajul tău" rows="3" class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple resize-none"></textarea>
-                    <div class="flex items-center space-x-2">
-                        <i class="text-accent-purple" data-fa-i2svg=""><svg class="svg-inline--fa fa-paperclip" aria-hidden="true" focusable="false" data-prefix="fas" data-icon="paperclip" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" data-fa-i2svg=""><path fill="currentColor" d="M364.2 83.8c-24.4-24.4-64-24.4-88.4 0l-184 184c-42.1 42.1-42.1 110.3 0 152.4s110.3 42.1 152.4 0l152-152c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-152 152c-64 64-167.6 64-231.6 0s-64-167.6 0-231.6l184-184c46.3-46.3 121.3-46.3 167.6 0s46.3 121.3 0 167.6l-176 176c-28.6 28.6-75 28.6-103.6 0s-28.6-75 0-103.6l144-144c10.9-10.9 28.7-10.9 39.6 0s10.9 28.7 0 39.6l-144 144c-6.7 6.7-6.7 17.7 0 24.4s17.7 6.7 24.4 0l176-176c24.4-24.4 24.4-64 0-88.4z"></path></svg></i>
-                        <span class="text-sm text-gray-300">Atașează fișier (opțional)</span>
-                    </div>
-                    <button type="submit" class="w-full bg-accent-purple text-primary-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
-                        Trimite mesajul
+                <form id="contact-form" action="https://formsubmit.co/traduhub@gmail.com" method="POST" class="space-y-4">
+                    <!-- Protecție anti-spam -->
+                    <input type="hidden" name="_captcha" value="false">
+                    <!-- Prevenim redirectul -->
+                    <input type="hidden" name="_next" value="">
+                  
+                    <input type="text" name="Nume" placeholder="Numele tău" required
+                      class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple">
+                  
+                    <input type="email" name="Email" placeholder="Email" required
+                      class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple">
+                  
+                    <textarea name="Mesaj" placeholder="Mesajul tău" rows="3" required
+                      class="w-full px-4 py-3 bg-gray-800 rounded-lg text-primary-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-accent-purple resize-none"></textarea>
+                  
+                    <button type="submit"
+                      class="w-full bg-accent-purple text-primary-white py-3 rounded-lg font-semibold hover:bg-opacity-90 transition-colors">
+                      Trimite mesajul
                     </button>
-                </form>
+                  
+                    <!-- Mesaje de status -->
+                    <p id="form-success" class="hidden text-green-400 text-center font-medium">✅ Mesaj trimis cu succes!</p>
+                    <p id="form-error" class="hidden text-red-400 text-center font-medium">❌ A apărut o eroare. Încearcă din nou.</p>
+                  </form>
+                  
+                  <script>
+                    const form = document.getElementById('contact-form');
+                    const successMsg = document.getElementById('form-success');
+                    const errorMsg = document.getElementById('form-error');
+                  
+                    form.addEventListener('submit', async (e) => {
+                      e.preventDefault();
+                  
+                      try {
+                        const formData = new FormData(form);
+                        const response = await fetch(form.action, {
+                          method: 'POST',
+                          body: formData,
+                          headers: { 'Accept': 'application/json' }
+                        });
+                  
+                        if (response.ok) {
+                          form.reset();
+                          successMsg.classList.remove('hidden');
+                          errorMsg.classList.add('hidden');
+                        } else {
+                          successMsg.classList.add('hidden');
+                          errorMsg.classList.remove('hidden');
+                        }
+                      } catch (error) {
+                        successMsg.classList.add('hidden');
+                        errorMsg.classList.remove('hidden');
+                      }
+                    });
+                  </script>
+                  
             </div>
             <div>
                 <h4 class="text-lg font-bold mb-6">Urmărește-ne</h4>
@@ -400,7 +573,7 @@
             </div>
         </div>
         <div class="border-t border-gray-700 mt-12 pt-8 text-center">
-            <p class="text-gray-400">© 2024 TraduHub. Toate drepturile rezervate. | Traduceri autorizate limba franceză | Interpretariat București</p>
+            <p class="text-gray-400">© 2025 TraduHub. Toate drepturile rezervate. | Traduceri autorizate română ⇆ franceză | Interpretariat București și Ilfov</p>
         </div>
     </div>
 </footer>
